@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47755432306143a3b23f45402d192483, type: 3}
+  m_Name: MoonTerrain
+  m_EditorClassIdentifier: 
+  autoUpdate: 1
+  levels:
+  - height: 6.3
+    color: {r: 0, g: 0, b: 0, a: 0}
+    tile: {fileID: 11400000, guid: 120f69bc12eb9f746aabfc7a5da1a078, type: 2}
+  - height: 24
+    color: {r: 0.21568629, g: 0.21568629, b: 0.21568629, a: 0}
+    tile: {fileID: 11400000, guid: dc605287cd3f2de469eb47cc01cddd70, type: 2}
+  - height: 35
+    color: {r: 0, g: 0, b: 0, a: 0}
+    tile: {fileID: 11400000, guid: fe26f5ef9952f8f489b2e0943d14f705, type: 2}
+  - height: 59.7
+    color: {r: 0, g: 0, b: 0, a: 0}
+    tile: {fileID: 11400000, guid: aec4817c26cc6a847bc00527e40d1a34, type: 2}
+  - height: 69.9
+    color: {r: 0, g: 0, b: 0, a: 0}
+    tile: {fileID: 11400000, guid: 1177eb545c4a4df43be23ba0281f85c9, type: 2}
+  - height: 87.9
+    color: {r: 0, g: 0, b: 0, a: 0}
+    tile: {fileID: 11400000, guid: ec05ece59fb884c44af0415065c48aa6, type: 2}

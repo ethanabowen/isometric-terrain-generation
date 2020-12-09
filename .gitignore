@@ -1,0 +1,13 @@
+# Unity/IDE directories
+.idea
+build
+Library
+Temp
+obj
+Logs
+
+# C Sharp files
+Assembly-CSharp*
+
+# Extra Resources
+Assets/2DGamekit*

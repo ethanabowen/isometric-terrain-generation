@@ -15,11 +15,11 @@ MonoBehaviour:
   autoUpdate: 1
   dimensionLength: 108
   heightMultiplier: 3
-  scale: 10.16
+  scale: 16.61
   octaves: 3
   persistence: 0.276
   lacunarity: 0.257
-  seed: 40
+  seed: 56
   offset: {x: 12.3, y: 2.06}
   heightCurve:
     serializedVersion: 2
@@ -74,9 +74,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   useFalloff: 1
   onlyFalloff: 0
-  falloffMultiplier: 3.909
-  falloffModifier1: 7.79
-  falloffModifier2: 5.48
+  falloffMultiplier: 3.49
+  falloffModifier1: 1.91
+  falloffModifier2: 4.59
   flatten: 0
   fillInGaps: 1
   invertHeight: 0

@@ -4,10 +4,10 @@ using UnityEngine.Tilemaps;
 
 [CreateAssetMenu()]
 public class TerrainSettings : UpdatableData {
-    public TerrainLevel[] levels;
+    public Terrain[] terrains;
     
     [System.Serializable]
-    public class TerrainLevel {
+    public class Terrain {
         [Range(0,100)]
         public float height;
         public Color color;

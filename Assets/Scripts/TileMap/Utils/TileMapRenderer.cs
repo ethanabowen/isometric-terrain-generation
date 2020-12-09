@@ -25,8 +25,8 @@ public class TileMapRenderer : MonoBehaviour
         Color[] colorMap = new Color[noiseMap.Length];
         for (int i = 0; i < noiseMap.Length; i++)
         {
-            colorMap[i] = terrainSettings.levels[terrainSettings.levels.Length - 1].color;
-            foreach (var terrainLevel in terrainSettings.levels)
+            colorMap[i] = terrainSettings.terrains[terrainSettings.terrains.Length - 1].color;
+            foreach (var terrainLevel in terrainSettings.terrains)
             {
                 if (noiseMap[i] < terrainLevel.height / 100)
                 {

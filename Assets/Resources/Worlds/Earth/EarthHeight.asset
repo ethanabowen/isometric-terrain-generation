@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: EarthHeight
   m_EditorClassIdentifier: 
   autoUpdate: 1
-  dimensionLength: 150
+  dimensionLength: 118
   heightMultiplier: 3
-  scale: 20.92
+  scale: 21.37
   octaves: 4
-  persistence: 0.552
-  lacunarity: 0.5
-  seed: 14
+  persistence: 0.673
+  lacunarity: 0.886
+  seed: 23
   offset: {x: 0, y: 0}
   heightCurve:
     serializedVersion: 2
@@ -43,8 +43,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.6720726
-      value: 0.17580883
+      time: 0.48066634
+      value: 0.16695873
       inSlope: -0.010869815
       outSlope: -0.010869815
       tangentMode: 0
@@ -63,11 +63,11 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  useFalloff: 0
+  useFalloff: 1
   onlyFalloff: 0
-  falloffMultiplier: 3.983
-  falloffModifier1: 3.99
-  falloffModifier2: 5.13
+  falloffMultiplier: 3.43
+  falloffModifier1: 2.75
+  falloffModifier2: 3.68
   flatten: 0
   fillInGaps: 1
   invertHeight: 0

@@ -13,22 +13,19 @@ MonoBehaviour:
   m_Name: MoonTerrain
   m_EditorClassIdentifier: 
   autoUpdate: 1
-  levels:
-  - height: 6.3
-    color: {r: 0, g: 0, b: 0, a: 0}
-    tile: {fileID: 11400000, guid: 120f69bc12eb9f746aabfc7a5da1a078, type: 2}
-  - height: 24
-    color: {r: 0.21568629, g: 0.21568629, b: 0.21568629, a: 0}
-    tile: {fileID: 11400000, guid: dc605287cd3f2de469eb47cc01cddd70, type: 2}
-  - height: 35
-    color: {r: 0, g: 0, b: 0, a: 0}
-    tile: {fileID: 11400000, guid: fe26f5ef9952f8f489b2e0943d14f705, type: 2}
-  - height: 59.7
+  terrains:
+  - height: 0
     color: {r: 0, g: 0, b: 0, a: 0}
     tile: {fileID: 11400000, guid: aec4817c26cc6a847bc00527e40d1a34, type: 2}
-  - height: 69.9
-    color: {r: 0, g: 0, b: 0, a: 0}
-    tile: {fileID: 11400000, guid: 1177eb545c4a4df43be23ba0281f85c9, type: 2}
-  - height: 87.9
+  - height: 3
     color: {r: 0, g: 0, b: 0, a: 0}
     tile: {fileID: 11400000, guid: ec05ece59fb884c44af0415065c48aa6, type: 2}
+  - height: 8.2
+    color: {r: 0, g: 0, b: 0, a: 0}
+    tile: {fileID: 11400000, guid: 4b489eda3f5a0114f8657339045e0a3f, type: 2}
+  - height: 46
+    color: {r: 0, g: 0, b: 0, a: 0}
+    tile: {fileID: 11400000, guid: d7527b05cbbc9344ead4213272393bcf, type: 2}
+  - height: 72.1
+    color: {r: 0, g: 0, b: 0, a: 0}
+    tile: {fileID: 11400000, guid: ae3325ecd1bf5744dba1788d558b1b35, type: 2}

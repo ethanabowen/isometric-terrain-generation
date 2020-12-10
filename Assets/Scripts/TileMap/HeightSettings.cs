@@ -26,7 +26,9 @@ public class HeightSettings : UpdatableData {
     public bool flatten;
 
     public bool fillInGaps;
-    public bool invertHeight;
+    public bool invert;
+    public bool jagged;
+    [Range(0, 1)] public float jaggedPercent;
 
     public (int, int, float, int, float, float, Vector2) ToTuple() {
         return (dimensionLength, seed, scale, octaves, persistence, lacunarity, offset);

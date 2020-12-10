@@ -15,32 +15,42 @@ MonoBehaviour:
   autoUpdate: 1
   terrains:
   - height: 2
-    color: {r: 0, g: 0, b: 0, a: 0}
     tile: {fileID: 11400000, guid: b860e2251b3bf354781b270a02fcc84e, type: 2}
+    animatedTile: {fileID: 11400000, guid: cddbbf158d16b8f448b8468b42b12aba, type: 2}
+    heightDelta: -1
   - height: 5.3
-    color: {r: 0, g: 0, b: 0, a: 0}
     tile: {fileID: 11400000, guid: 2e274b798f353ec42b57ea42149e1472, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 0
   - height: 9.1
-    color: {r: 0, g: 0, b: 0, a: 0}
     tile: {fileID: 11400000, guid: 44df56b84149ee74c968bcfce83a37cb, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 1
   - height: 27.6
-    color: {r: 0, g: 0, b: 0, a: 0}
     tile: {fileID: 11400000, guid: 7f6ead6f807e8e44889ad261267b10af, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 0
   - height: 42.2
-    color: {r: 0, g: 0, b: 0, a: 0}
     tile: {fileID: 11400000, guid: 8581b1c24c2af78409058186c0a92435, type: 2}
-  - height: 57.9
-    color: {r: 0, g: 0, b: 0, a: 0}
+    animatedTile: {fileID: 0}
+    heightDelta: 0
+  - height: 56
     tile: {fileID: 11400000, guid: aec4817c26cc6a847bc00527e40d1a34, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 0
   - height: 70.7
-    color: {r: 0, g: 0, b: 0, a: 0}
     tile: {fileID: 11400000, guid: 1177eb545c4a4df43be23ba0281f85c9, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 0
   - height: 82.5
-    color: {r: 0, g: 0, b: 0, a: 0}
     tile: {fileID: 11400000, guid: 03fcbafe557b8714badc78479bb0bde4, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 0
   - height: 91
-    color: {r: 0, g: 0, b: 0, a: 0}
     tile: {fileID: 11400000, guid: ee6401e53a22ce147bd11b95020fd473, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 0
   - height: 97.5
-    color: {r: 0, g: 0, b: 0, a: 0}
     tile: {fileID: 11400000, guid: f294350261f8cb34db310fdeec1f91f3, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 0

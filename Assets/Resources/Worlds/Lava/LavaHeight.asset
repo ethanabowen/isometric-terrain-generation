@@ -79,4 +79,6 @@ MonoBehaviour:
   falloffModifier2: 4.59
   flatten: 0
   fillInGaps: 1
-  invertHeight: 0
+  invert: 0
+  jagged: 1
+  jaggedPercent: 0.1

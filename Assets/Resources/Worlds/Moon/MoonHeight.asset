@@ -16,7 +16,7 @@ MonoBehaviour:
   dimensionLength: 93
   heightMultiplier: 3
   scale: 19.94
-  octaves: 3
+  octaves: 5
   persistence: 0.276
   lacunarity: 0.257
   seed: 58
@@ -25,14 +25,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      time: -0.02145619
+      value: 1.1857512
+      inSlope: -3.1136343
+      outSlope: -3.1136343
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.21298291
+    - serializedVersion: 3
+      time: 0.13311408
+      value: 0.03885026
+      inSlope: 0.8505085
+      outSlope: 0.8505085
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1.00531
       value: 1.1920547
@@ -52,4 +61,6 @@ MonoBehaviour:
   falloffModifier2: 8.31
   flatten: 0
   fillInGaps: 1
-  invertHeight: 1
+  invert: 0
+  jagged: 1
+  jaggedPercent: 0.555

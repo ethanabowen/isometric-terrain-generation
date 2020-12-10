@@ -3,20 +3,20 @@ using System.Collections;
 using UnityEditor;
 
 #if UNITY_EDITOR
-[CustomEditor (typeof (TileMapPreview))]
+[CustomEditor (typeof (WorldMap))]
 public class MapGeneratorEditor : Editor {
 
 	public override void OnInspectorGUI() {
-		TileMapPreview tileMapGen = (TileMapPreview)target;
+		WorldMap worldMapGen = (WorldMap)target;
 
 		if (DrawDefaultInspector ()) {
-			if (tileMapGen.autoUpdate) {
-				tileMapGen.GenerateMap ();
+			if (worldMapGen.autoUpdate) {
+				worldMapGen.GenerateMap ();
 			}
 		}
 
 		if (GUILayout.Button ("Generate")) {
-			tileMapGen.GenerateMap ();
+			worldMapGen.GenerateMap ();
 		}
 	}
 }

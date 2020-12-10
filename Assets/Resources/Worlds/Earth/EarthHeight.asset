@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EarthHeight
   m_EditorClassIdentifier: 
   autoUpdate: 1
-  dimensionLength: 118
+  dimensionLength: 93
   heightMultiplier: 3
   scale: 21.37
   octaves: 4
@@ -70,4 +70,6 @@ MonoBehaviour:
   falloffModifier2: 3.68
   flatten: 0
   fillInGaps: 1
-  invertHeight: 0
+  invert: 0
+  jagged: 1
+  jaggedPercent: 0.4

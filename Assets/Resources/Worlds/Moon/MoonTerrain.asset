@@ -14,18 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoUpdate: 1
   terrains:
-  - height: 0
+  - height: 2
     color: {r: 0, g: 0, b: 0, a: 0}
     tile: {fileID: 11400000, guid: aec4817c26cc6a847bc00527e40d1a34, type: 2}
+    heightDelta: 1
   - height: 3
     color: {r: 0, g: 0, b: 0, a: 0}
     tile: {fileID: 11400000, guid: ec05ece59fb884c44af0415065c48aa6, type: 2}
+    heightDelta: 1
   - height: 8.2
     color: {r: 0, g: 0, b: 0, a: 0}
     tile: {fileID: 11400000, guid: 4b489eda3f5a0114f8657339045e0a3f, type: 2}
+    heightDelta: 1
   - height: 46
     color: {r: 0, g: 0, b: 0, a: 0}
     tile: {fileID: 11400000, guid: d7527b05cbbc9344ead4213272393bcf, type: 2}
+    heightDelta: 1
   - height: 72.1
     color: {r: 0, g: 0, b: 0, a: 0}
     tile: {fileID: 11400000, guid: ae3325ecd1bf5744dba1788d558b1b35, type: 2}
+    heightDelta: 1

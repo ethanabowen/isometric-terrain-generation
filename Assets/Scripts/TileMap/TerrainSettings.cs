@@ -10,10 +10,16 @@ public class TerrainSettings : UpdatableData {
     public class Terrain {
         [Range(0,100)]
         public float height;
-        public Color color;
         public Tile tile;
+        public AnimatedTile animatedTile;
+        public int heightDelta;
     }
     
+    public Terrain GetTerrain(int terrainIndex) {
+        return terrains[terrainIndex];
+    }
+
+
 #if UNITY_EDITOR
 
     protected override void OnValidate() {

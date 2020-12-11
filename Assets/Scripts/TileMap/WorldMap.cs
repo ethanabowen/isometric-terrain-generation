@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class WorldMap : MonoBehaviour {
-
     public enum World {
         Earth,
         Lava,
@@ -13,8 +12,12 @@ public class WorldMap : MonoBehaviour {
 
     public World world;
 
+    public Grid worldMap;
+    public GameObject tilemapPrefab;
+
     public Tilemap groundMap;
     public Tilemap foliageMap;
+    private GameObject[] m_Tilemaps;
 
     private TerrainSettings m_TerrainSettings;
     private HeightSettings m_HeightSettings;
@@ -29,6 +32,8 @@ public class WorldMap : MonoBehaviour {
         m_HeightSettings = Resources.Load<HeightSettings>($"Worlds/{world.ToString()}/{world.ToString()}Height");
         m_TerrainSettings = Resources.Load<TerrainSettings>($"Worlds/{world.ToString()}/{world.ToString()}Terrain");
         m_FoliageSettings = Resources.Load<FoliageSettings>($"Worlds/{world.ToString()}/{world.ToString()}Foliage");
+
+        m_Tilemaps = new GameObject[m_TerrainSettings.terrains.Length];
 
         if (m_TerrainSettings != null) {
             m_TerrainSettings.OnValuesUpdated -= OnValuesUpdated;
@@ -53,13 +58,19 @@ public class WorldMap : MonoBehaviour {
     }
 
     public void GenerateMap() {
-        groundMap.ClearAllTiles();
+        ClearWorldTileMaps();
         GenerateIsoMap();
+    }
+
+    private void ClearWorldTileMaps() {
+        foreach (Transform child in worldMap.transform) {
+            DestroyImmediate(child.gameObject);
+        }
     }
 
     private void GenerateIsoMap() {
         // Hide the object with the test texture
-        groundMap.ClearAllTiles();
+        //groundMap.ClearAllTiles();
 
         // Generate a height map
         int terrainCount = m_TerrainSettings.terrains.Length;
@@ -129,28 +140,44 @@ public class WorldMap : MonoBehaviour {
             }
         }
 
+        GameObject currentTilemap = m_Tilemaps[terrainIndex];
+        Tilemap tilemap = null;
+        if (currentTilemap == null) {
+            currentTilemap = Instantiate(tilemapPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            currentTilemap.transform.parent = worldMap.transform;
+            m_Tilemaps[terrainIndex] = currentTilemap; 
+            tilemap = currentTilemap.GetComponent<Tilemap>();
+            var renderer = currentTilemap.GetComponent<Renderer>();
+            renderer.sortingOrder =(int) tileHeight;
+            
+            Debug.Log(terrainIndex + ", " + currentTilemap.GetInstanceID());
+        }
+        else {
+            tilemap = currentTilemap.GetComponent<Tilemap>();
+        }
 
-        FillTileMapGaps(x, y, z, tile);
+        FillTileMapGaps(x, y, z, tilemap, tile);
+
 
         Vector3Int tilePosition =
             new Vector3Int(x - m_HeightSettings.dimensionLength / 2, y - m_HeightSettings.dimensionLength / 2, z);
 
         if (animatedTile != null) {
-            groundMap.SetTile(tilePosition, animatedTile);
+            tilemap.SetTile(tilePosition, animatedTile);
         }
         else {
-            groundMap.SetTile(tilePosition, tile);
+            tilemap.SetTile(tilePosition, tile);
         }
     }
 
-    private void FillTileMapGaps(int x, int y, int z, Tile tile) {
+    private void FillTileMapGaps(int x, int y, int z, Tilemap tilemap, Tile tile) {
         if (m_HeightSettings.fillInGaps && z - 3 > 0) {
             int currentZ = z;
             while (currentZ > 0) {
                 Vector3Int pillarVector =
                     new Vector3Int(x - m_HeightSettings.dimensionLength / 2, y - m_HeightSettings.dimensionLength / 2,
                         currentZ - 3);
-                groundMap.SetTile(pillarVector, tile);
+                tilemap.SetTile(pillarVector, tile);
                 currentZ -= 3;
             }
         }
@@ -158,7 +185,7 @@ public class WorldMap : MonoBehaviour {
 
     private int GetTilemapLevelAtHeight(float noiseHeight) {
         for (int i = 0; i < m_TerrainSettings.terrains.Length; i++) {
-            if (noiseHeight <= m_TerrainSettings.terrains[i].height / 100) {
+            if (noiseHeight <= m_TerrainSettings.terrains[i].height / 100.0f) {
                 return i;
             }
         }

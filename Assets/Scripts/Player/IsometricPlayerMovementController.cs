@@ -5,8 +5,8 @@ using UnityEngine;
 public class IsometricPlayerMovementController : MonoBehaviour
 {
 
-    public float movementSpeed = 1f;
-    public float sprintMultiplier = 3f;
+    public float movementSpeed = 2.2f;
+    public float sprintMultiplier = 1.5f;
     public IsometricCharacterRenderer isoRenderer;
 
     Rigidbody2D rbody;
@@ -20,7 +20,9 @@ public class IsometricPlayerMovementController : MonoBehaviour
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
-            movementSpeed = movementSpeed * sprintMultiplier;
+            movementSpeed *= sprintMultiplier;
+        } else if (Input.GetKeyUp(KeyCode.LeftShift)) {
+            movementSpeed /= sprintMultiplier;
         }
     }
     // Update is called once per frame

@@ -9,8 +9,9 @@ public class IsometricCharacterRenderer : MonoBehaviour
     public static readonly string[] staticDirections = { "Static N", "Static NW", "Static W", "Static SW", "Static S", "Static SE", "Static E", "Static NE" };
     public static readonly string[] runDirections = {"Run N", "Run NW", "Run W", "Run SW", "Run S", "Run SE", "Run E", "Run NE"};
 
-    Animator animator;
-    int lastDirection;
+    private Animator animator;
+    public Vector2 lastDirectionAsVector;
+    public int lastDirection;
 
     private void Awake()
     {
@@ -37,6 +38,7 @@ public class IsometricCharacterRenderer : MonoBehaviour
             //use DirectionToIndex to get the index of the slice from the direction vector
             //save the answer to lastDirection
             directionArray = runDirections;
+            lastDirectionAsVector = direction;
             lastDirection = DirectionToIndex(direction, 8);
         }
 

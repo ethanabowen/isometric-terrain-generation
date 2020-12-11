@@ -6,7 +6,8 @@ public class IsometricPlayerMovementController : MonoBehaviour
 {
 
     public float movementSpeed = 1f;
-    IsometricCharacterRenderer isoRenderer;
+    public float sprintMultiplier = 3f;
+    public IsometricCharacterRenderer isoRenderer;
 
     Rigidbody2D rbody;
 
@@ -17,6 +18,11 @@ public class IsometricPlayerMovementController : MonoBehaviour
     }
 
 
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+            movementSpeed = movementSpeed * sprintMultiplier;
+        }
+    }
     // Update is called once per frame
     void FixedUpdate()
     {

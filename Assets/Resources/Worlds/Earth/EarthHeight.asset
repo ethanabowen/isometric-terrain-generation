@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: EarthHeight
   m_EditorClassIdentifier: 
   autoUpdate: 1
-  dimensionLength: 93
+  dimensionLength: 51
   heightMultiplier: 3
   scale: 21.37
   octaves: 4
   persistence: 0.673
   lacunarity: 0.886
-  seed: 23
+  seed: 10
   offset: {x: 0, y: 0}
   heightCurve:
     serializedVersion: 2

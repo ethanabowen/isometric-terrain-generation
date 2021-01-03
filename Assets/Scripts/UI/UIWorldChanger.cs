@@ -29,11 +29,11 @@ namespace UI {
         public Slider jaggedPercentSlider;
         
         public void Start() {
-            InitUIValues();
-            InitChangeHandlers();
+            ReloadUI();
         }
 
         private void ReloadUI() {
+            //Change Handlers removed to prevent the slider value updates cause the World to Generate
             RemoveChangeHandlers();
             InitUIValues();
             InitChangeHandlers();
@@ -188,13 +188,13 @@ namespace UI {
         }
 
         private void LacunarityValueChanged() {
-            worldMap.m_HeightSettings.lacunarity = (int) lacunaritySlider.value;
+            worldMap.m_HeightSettings.lacunarity = lacunaritySlider.value;
             SetSliderValueAsText(lacunaritySlider);
             worldMap.GenerateMap();
         }
 
         private void PersistenseValueChanged() {
-            worldMap.m_HeightSettings.persistence = (int) persistenceSlider.value;
+            worldMap.m_HeightSettings.persistence = persistenceSlider.value;
             SetSliderValueAsText(persistenceSlider);
             worldMap.GenerateMap();
         }

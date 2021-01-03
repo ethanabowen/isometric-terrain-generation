@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class WorldMap : MonoBehaviour {
-    
     public World world;
 
     public Tilemap groundMap;
@@ -23,14 +22,14 @@ public class WorldMap : MonoBehaviour {
         /*TODO: This feel VERY expensive, consider refactor */
         LoadWorldResources();
 
-        if (m_TerrainSettings != null) {
-            m_TerrainSettings.OnValuesUpdated -= OnValuesUpdated;
-            m_TerrainSettings.OnValuesUpdated += OnValuesUpdated;
-        }
-
         if (m_HeightSettings != null) {
             m_HeightSettings.OnValuesUpdated -= OnValuesUpdated;
             m_HeightSettings.OnValuesUpdated += OnValuesUpdated;
+        }
+
+        if (m_TerrainSettings != null) {
+            m_TerrainSettings.OnValuesUpdated -= OnValuesUpdated;
+            m_TerrainSettings.OnValuesUpdated += OnValuesUpdated;
         }
 
         if (m_FoliageSettings != null) {
@@ -39,8 +38,14 @@ public class WorldMap : MonoBehaviour {
         }
     }
 
-    
+
     public void OnValuesUpdated() {
+        /*
+           In Editor Mode (in Unity, not in builds), this function is called ~6 times,
+           one for each Startup Event.
+           TODO: Consider way to improve performance in the future
+        */
+
         if (Application.isPlaying) {
             GenerateMap();
         }
@@ -51,7 +56,7 @@ public class WorldMap : MonoBehaviour {
         m_TerrainSettings = Resources.Load<TerrainSettings>($"Worlds/{world.ToString()}/{world.ToString()}Terrain");
         m_FoliageSettings = Resources.Load<FoliageSettings>($"Worlds/{world.ToString()}/{world.ToString()}Foliage");
     }
-    
+
     public void GenerateMap() {
         // Hide the object with the test texture
         groundMap.ClearAllTiles();
@@ -97,7 +102,7 @@ public class WorldMap : MonoBehaviour {
             }
         }
 
-        Debug.Log("Made it to the end!");
+        //Debug.Log("Made it to the end!");
     }
 
     private void SetTileAtPointAndHeight(int x, int y, float noiseHeight, int terrainLevelCount) {

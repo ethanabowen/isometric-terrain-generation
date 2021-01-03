@@ -1,24 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using TileMap;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class WorldMap : MonoBehaviour {
-
-    public enum World {
-        Earth,
-        Lava,
-        Moon
-    }
-
+    
     public World world;
 
     public Tilemap groundMap;
     public Tilemap foliageMap;
 
-    private TerrainSettings m_TerrainSettings;
-    private HeightSettings m_HeightSettings;
-    private FoliageSettings m_FoliageSettings;
+    public TerrainSettings m_TerrainSettings;
+    public HeightSettings m_HeightSettings;
+    public FoliageSettings m_FoliageSettings;
 
     public bool autoUpdate;
 
@@ -26,9 +21,7 @@ public class WorldMap : MonoBehaviour {
 
     public void OnValidate() {
         /*TODO: This feel VERY expensive, consider refactor */
-        m_HeightSettings = Resources.Load<HeightSettings>($"Worlds/{world.ToString()}/{world.ToString()}Height");
-        m_TerrainSettings = Resources.Load<TerrainSettings>($"Worlds/{world.ToString()}/{world.ToString()}Terrain");
-        m_FoliageSettings = Resources.Load<FoliageSettings>($"Worlds/{world.ToString()}/{world.ToString()}Foliage");
+        LoadWorldResources();
 
         if (m_TerrainSettings != null) {
             m_TerrainSettings.OnValuesUpdated -= OnValuesUpdated;
@@ -46,18 +39,20 @@ public class WorldMap : MonoBehaviour {
         }
     }
 
+    
     public void OnValuesUpdated() {
-        if (!Application.isPlaying) {
+        if (Application.isPlaying) {
             GenerateMap();
         }
     }
 
-    public void GenerateMap() {
-        groundMap.ClearAllTiles();
-        GenerateIsoMap();
+    public void LoadWorldResources() {
+        m_HeightSettings = Resources.Load<HeightSettings>($"Worlds/{world.ToString()}/{world.ToString()}Height");
+        m_TerrainSettings = Resources.Load<TerrainSettings>($"Worlds/{world.ToString()}/{world.ToString()}Terrain");
+        m_FoliageSettings = Resources.Load<FoliageSettings>($"Worlds/{world.ToString()}/{world.ToString()}Foliage");
     }
-
-    private void GenerateIsoMap() {
+    
+    public void GenerateMap() {
         // Hide the object with the test texture
         groundMap.ClearAllTiles();
 

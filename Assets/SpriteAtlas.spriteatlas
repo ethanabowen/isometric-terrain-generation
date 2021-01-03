@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Sprite Atlas
+  m_Name: SpriteAtlas
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -473,5 +473,5 @@ SpriteAtlas:
   - ISO_Tile_Dirt_01_GrassPath_End_04
   - ISO_Overlay_Roof_Hay_04
   - ISO_Tile_Dirt_01_GrassPath_End_03
-  m_Tag: New Sprite Atlas
+  m_Tag: SpriteAtlas
   m_IsVariant: 0

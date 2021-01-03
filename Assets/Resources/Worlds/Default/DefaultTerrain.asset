@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47755432306143a3b23f45402d192483, type: 3}
+  m_Name: DefaultTerrain
+  m_EditorClassIdentifier: 
+  autoUpdate: 1
+  terrains:
+  - height: 2
+    tile: {fileID: 11400000, guid: b860e2251b3bf354781b270a02fcc84e, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: -1
+  - height: 5.3
+    tile: {fileID: 11400000, guid: 2e274b798f353ec42b57ea42149e1472, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 0
+  - height: 9.1
+    tile: {fileID: 11400000, guid: 44df56b84149ee74c968bcfce83a37cb, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 1
+  - height: 27.6
+    tile: {fileID: 11400000, guid: 7f6ead6f807e8e44889ad261267b10af, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 0
+  - height: 42.2
+    tile: {fileID: 11400000, guid: 8581b1c24c2af78409058186c0a92435, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 0
+  - height: 56
+    tile: {fileID: 11400000, guid: aec4817c26cc6a847bc00527e40d1a34, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 0
+  - height: 70.7
+    tile: {fileID: 11400000, guid: 1177eb545c4a4df43be23ba0281f85c9, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 0
+  - height: 82.5
+    tile: {fileID: 11400000, guid: 03fcbafe557b8714badc78479bb0bde4, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 0
+  - height: 91
+    tile: {fileID: 11400000, guid: ee6401e53a22ce147bd11b95020fd473, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 0
+  - height: 97.5
+    tile: {fileID: 11400000, guid: f294350261f8cb34db310fdeec1f91f3, type: 2}
+    animatedTile: {fileID: 0}
+    heightDelta: 0

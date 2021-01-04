@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: LavaHeight
   m_EditorClassIdentifier: 
   autoUpdate: 1
-  dimensionLength: 108
+  dimensionLength: 80
   heightMultiplier: 3
   scale: 16.61
-  octaves: 3
-  persistence: 0.276
-  lacunarity: 0.257
-  seed: 56
+  octaves: 4
+  persistence: 0.171
+  lacunarity: 0.217
+  seed: 82
   offset: {x: 12.3, y: 2.06}
   heightCurve:
     serializedVersion: 2
@@ -34,8 +34,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.8731955
-      value: 0.981302
+      time: 0.30816257
+      value: 0.5915086
       inSlope: 1.1952956
       outSlope: 1.1952956
       tangentMode: 0
@@ -43,8 +43,26 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.8980713
-      value: -0.021026611
+      time: 0.5294554
+      value: 0.12598348
+      inSlope: 1.302558
+      outSlope: 1.302558
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8042012
+      value: 0.5314364
+      inSlope: 1.5447637
+      outSlope: 1.5447637
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.92749023
+      value: 0.8591614
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -52,8 +70,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.98400885
-      value: -0.019751318
+      time: 0.935669
+      value: 0.88832974
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -61,8 +79,17 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.9850026
-      value: 0.9794332
+      time: 0.9862588
+      value: 0.85908747
+      inSlope: -8.170499
+      outSlope: -8.170499
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0061207
+      value: 0.0065518618
       inSlope: 0
       outSlope: 0
       tangentMode: 0

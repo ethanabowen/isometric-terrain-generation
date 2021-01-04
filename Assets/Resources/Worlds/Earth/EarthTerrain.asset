@@ -16,7 +16,7 @@ MonoBehaviour:
   terrains:
   - height: 2
     tile: {fileID: 11400000, guid: b860e2251b3bf354781b270a02fcc84e, type: 2}
-    animatedTile: {fileID: 11400000, guid: cddbbf158d16b8f448b8468b42b12aba, type: 2}
+    animatedTile: {fileID: 0}
     heightDelta: -1
   - height: 5.3
     tile: {fileID: 11400000, guid: 2e274b798f353ec42b57ea42149e1472, type: 2}

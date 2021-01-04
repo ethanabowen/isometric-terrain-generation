@@ -10,6 +10,7 @@ public class WorldMap : MonoBehaviour {
     public Tilemap groundMap;
     public Tilemap foliageMap;
 
+    private bool isProcessingWorldEvents = false;
     public TerrainSettings m_TerrainSettings;
     public HeightSettings m_HeightSettings;
     public FoliageSettings m_FoliageSettings;
@@ -19,22 +20,25 @@ public class WorldMap : MonoBehaviour {
     private System.Random rand = new System.Random();
 
     public void OnValidate() {
-        /*TODO: This feel VERY expensive, consider refactor */
-        LoadWorldResources();
+        if (isProcessingWorldEvents || Application.isEditor) {
+            /*TODO: This feel VERY expensive, consider refactor */
+            LoadWorldResources();
 
-        if (m_HeightSettings != null) {
-            m_HeightSettings.OnValuesUpdated -= OnValuesUpdated;
-            m_HeightSettings.OnValuesUpdated += OnValuesUpdated;
-        }
 
-        if (m_TerrainSettings != null) {
-            m_TerrainSettings.OnValuesUpdated -= OnValuesUpdated;
-            m_TerrainSettings.OnValuesUpdated += OnValuesUpdated;
-        }
+            if (m_HeightSettings != null) {
+                m_HeightSettings.OnValuesUpdated -= OnValuesUpdated;
+                m_HeightSettings.OnValuesUpdated += OnValuesUpdated;
+            }
 
-        if (m_FoliageSettings != null) {
-            m_FoliageSettings.OnValuesUpdated -= OnValuesUpdated;
-            m_FoliageSettings.OnValuesUpdated += OnValuesUpdated;
+            if (m_TerrainSettings != null) {
+                m_TerrainSettings.OnValuesUpdated -= OnValuesUpdated;
+                m_TerrainSettings.OnValuesUpdated += OnValuesUpdated;
+            }
+
+            if (m_FoliageSettings != null) {
+                m_FoliageSettings.OnValuesUpdated -= OnValuesUpdated;
+                m_FoliageSettings.OnValuesUpdated += OnValuesUpdated;
+            }
         }
     }
 
@@ -45,10 +49,13 @@ public class WorldMap : MonoBehaviour {
            one for each Startup Event.
            TODO: Consider way to improve performance in the future
         */
-
-        if (Application.isPlaying) {
+        if (isProcessingWorldEvents || Application.isEditor) {
             GenerateMap();
         }
+    }
+
+    public void setProcessWorldEvents(bool shouldProcess) {
+        isProcessingWorldEvents = shouldProcess;
     }
 
     public void LoadWorldResources() {
@@ -57,6 +64,9 @@ public class WorldMap : MonoBehaviour {
         m_FoliageSettings = Resources.Load<FoliageSettings>($"Worlds/{world.ToString()}/{world.ToString()}Foliage");
     }
 
+    /// <summary>
+    /// Using loaded resources, generate an TileMap using Perlin Noise and other features, such as Fallout.
+    /// </summary>
     public void GenerateMap() {
         // Hide the object with the test texture
         groundMap.ClearAllTiles();
@@ -73,8 +83,6 @@ public class WorldMap : MonoBehaviour {
 
         float[,] noiseMap =
             Noise.GenerateNoiseMapMatrix(m_HeightSettings);
-
-        Tilemap[] tileMaps = new Tilemap[m_TerrainSettings.terrains.Length];
 
         // Create Tiles
         for (int x = 0; x < m_HeightSettings.dimensionLength; x++) {

@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class HeightSettings : UpdatableData {
     // Input data for our noise generator
-    [Range(1, 100)] public int dimensionLength;
+    [Range(1, 200)] public int dimensionLength;
     [Range(1, 10)] public int heightMultiplier = 3;
     public float scale;
 
@@ -29,7 +29,7 @@ public class HeightSettings : UpdatableData {
     public bool invert;
     public bool jagged;
     [Range(0, 1)] public float jaggedPercent;
-
+    
     public (int, int, float, int, float, float, Vector2) ToTuple() {
         return (dimensionLength, seed, scale, octaves, persistence, lacunarity, offset);
     }
@@ -37,7 +37,7 @@ public class HeightSettings : UpdatableData {
 #if UNITY_EDITOR
 
     protected override void OnValidate() {
-        base.OnValidate();
+            base.OnValidate();
     }
 #endif
 }

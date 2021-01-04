@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: EarthHeight
   m_EditorClassIdentifier: 
   autoUpdate: 1
-  dimensionLength: 86
-  heightMultiplier: 3
+  dimensionLength: 131
+  heightMultiplier: 2
   scale: 28
   octaves: 4
-  persistence: 0.673
-  lacunarity: 0.886
-  seed: -38
+  persistence: 0.34
+  lacunarity: 0.76
+  seed: 5
   offset: {x: 0, y: 0}
   heightCurve:
     serializedVersion: 2
@@ -63,13 +63,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  useFalloff: 0
+  useFalloff: 1
   onlyFalloff: 0
-  falloffMultiplier: 1
-  falloffModifier1: 2.75
-  falloffModifier2: 3.68
+  falloffMultiplier: 3.79
+  falloffModifier1: 1.79
+  falloffModifier2: 4.64
   flatten: 0
-  fillInGaps: 1
+  fillInGaps: 0
   invert: 0
   jagged: 0
   jaggedPercent: 0.4

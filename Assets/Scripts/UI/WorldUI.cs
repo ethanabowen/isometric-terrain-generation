@@ -26,6 +26,7 @@ namespace UI {
         public Slider falloffModifier2Slider;
 
         public Toggle flattenToggle;
+        public Toggle fillInGapsToggle;
         
         public Toggle jaggedToggle;
         public Slider jaggedPercentSlider;
@@ -85,6 +86,7 @@ namespace UI {
             SetSliderValueAsText(falloffModifier2Slider);
 
             flattenToggle.isOn = worldMap.m_HeightSettings.flatten;
+            fillInGapsToggle.isOn = worldMap.m_HeightSettings.fillInGaps;
             
             jaggedToggle.isOn = worldMap.m_HeightSettings.jagged;
             jaggedPercentSlider.value = worldMap.m_HeightSettings.jaggedPercent;
@@ -115,6 +117,8 @@ namespace UI {
             falloffModifier2Slider.onValueChanged.AddListener(delegate { FalloffModifier2Changed(); });
 
             flattenToggle.onValueChanged.AddListener(delegate { FlattenValueChanged(); });
+            fillInGapsToggle.onValueChanged.AddListener(delegate { FillInGapsValueChanged(); });
+                
             jaggedToggle.onValueChanged.AddListener(delegate { JaggedValueChanged(); });
             jaggedPercentSlider.onValueChanged.AddListener(delegate { JaggedPercentValueChanged(); });
         }
@@ -140,6 +144,8 @@ namespace UI {
             falloffModifier2Slider.onValueChanged.RemoveAllListeners();
 
             flattenToggle.onValueChanged.RemoveAllListeners();
+            fillInGapsToggle.onValueChanged.RemoveAllListeners();
+                
             jaggedToggle.onValueChanged.RemoveAllListeners();
             jaggedPercentSlider.onValueChanged.RemoveAllListeners();
         }
@@ -255,6 +261,11 @@ namespace UI {
             SetSliderValueAsText(falloffModifier2Slider);
             worldMap.GenerateMap();
         }
+        
+        private void FillInGapsValueChanged() {
+            worldMap.m_HeightSettings.fillInGaps = fillInGapsToggle.isOn;
+            worldMap.GenerateMap();
+        }        
         
         private void FlattenValueChanged() {
             worldMap.m_HeightSettings.flatten = flattenToggle.isOn;

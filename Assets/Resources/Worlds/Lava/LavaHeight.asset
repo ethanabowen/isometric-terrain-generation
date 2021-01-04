@@ -17,10 +17,10 @@ MonoBehaviour:
   heightMultiplier: 3
   scale: 16.61
   octaves: 4
-  persistence: 0.171
-  lacunarity: 0.217
+  persistence: 0.70671433
+  lacunarity: 0.44557142
   seed: 82
-  offset: {x: 12.3, y: 2.06}
+  offset: {x: 0, y: 0}
   heightCurve:
     serializedVersion: 2
     m_Curve:
@@ -101,9 +101,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   useFalloff: 1
   onlyFalloff: 0
-  falloffMultiplier: 3.49
-  falloffModifier1: 1.91
-  falloffModifier2: 4.59
+  falloffMultiplier: 4
+  falloffModifier1: 3.58493
+  falloffModifier2: 6.8635015
   flatten: 0
   fillInGaps: 1
   invert: 0
